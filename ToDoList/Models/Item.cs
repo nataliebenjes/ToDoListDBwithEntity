@@ -12,12 +12,12 @@ namespace ToDoList.Models
     {
       Description = description;
     }
-    public Item(string description, int id)
+    public Item(string description, int id) // overloading constructor. lets program instatiate Item with description or id
     {
       Description = description;
       Id = id;
     }
-
+//used to compare two item methods based on their description and ID
     public override bool Equals(System.Object otherItem)
     {
       if (!(otherItem is Item))
@@ -32,12 +32,12 @@ namespace ToDoList.Models
         return (idEquality && descriptionEquality);
       }
     }
-
+//returns a hash code based on the ID
     public override int GetHashCode()
     {
         return Id.GetHashCode();
     }
-
+//to save an item to the database
     public void Save()
     {
       MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
@@ -62,7 +62,7 @@ namespace ToDoList.Models
         conn.Dispose();
       }
     }
-
+//to retieve an Item object from database based on its ID
     public static Item Find(int id)
     {
       MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
@@ -106,9 +106,9 @@ namespace ToDoList.Models
       cmd.CommandText = "SELECT * FROM items;";
 
       MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
-      while (rdr.Read())
+      while (rdr.Read())//take each record and translate it into an Item object
       {
-          int itemId = rdr.GetInt32(0);
+          int itemId = rdr.GetInt32(0);//returns 32bit int
           string itemDescription = rdr.GetString(1);
           Item newItem = new Item(itemDescription, itemId);
           allItems.Add(newItem);
