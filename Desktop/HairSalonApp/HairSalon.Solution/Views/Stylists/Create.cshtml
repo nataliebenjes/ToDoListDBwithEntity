@@ -3,10 +3,11 @@
 <h4>Add a new stylist</h4>
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.StylistName)
+  @Html.LabelFor(model => model.StylistName, "Stylist Name")
   @Html.TextBoxFor(model => model.StylistName)
-  @Html.LabelFor(model => model.StylistDescription)
-  @Html.TextBoxFor(model => model.StylistDescription)
-  <input type="submit" value="Add new stylist" />
+  @Html.LabelFor(model => model.StylistDetails, "Stylist Details")
+  @Html.TextBoxFor(model => model.StylistDetails)
+  <input type="submit" value="Add new Stylist" />
 }
-<p>@Html.ActionLink("Show all stylists", "Index")</p>
+
+<p>@Html.ActionLink("Show all Stylist", "Index")</p>
