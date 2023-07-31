@@ -17,6 +17,8 @@ A webpage application using C# to create and use a database to store both Stylis
 - Linq
 - Mvc
 
+## Database Structure
+![Database MySQL page](/Users/nataliebenjes/Desktop/HairSalonApp/SQLHairSalon.png)
 
 ## Complete setup/installation instructions 
 - Clone this repository from GitHub
