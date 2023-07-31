@@ -11,11 +11,11 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description)
+  @Html.LabelFor(model => model.name)
+  @Html.TextBoxFor(model => model.name)
 
-  @Html.LabelFor(model => model.Category)
-  @Html.DropDownList("CategoryId")
+  @Html.LabelFor(model => model.Stylist)
+  @Html.DropDownList("StylistID")
 
   <input type="submit" value="Add new client" class="btn btn-default" />
 }
